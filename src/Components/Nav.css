@@ -1,0 +1,46 @@
+.navbar {
+    width: 95%;
+    height: 50px;
+    background-color: #5a37d0;
+    border-radius: 10px;
+    margin-inline: auto;
+    margin-top: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+
+}
+
+.heading {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.heading img {
+    width: 30px;
+    height: 35px;
+}
+
+.inputDiv {}
+
+.inputDiv input {
+    border: none;
+    outline: none;
+    background-color: #6f45f0;
+    padding-left: 10px;
+    width: 250px;
+    height: 30px;
+    color: white;
+    border-radius: 5px;
+
+    &::placeholder {
+        color: white;
+    }
+}
+
+
+.found {}

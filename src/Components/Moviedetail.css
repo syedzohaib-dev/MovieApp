@@ -1,0 +1,26 @@
+.box2 {
+    width: 350px;
+    height: 95%;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.movieDetail {
+    width: 100%;
+    height: 150px;
+    border: 1px solid white;
+    display: flex;
+}
+
+.bigPoster {
+    width: 30%;
+    height: 100%;
+    border: 1px solid white;
+}
+
+.bigData {
+    width: 70%;
+    height: 100%;
+    border: 1px solid white;
+
+}

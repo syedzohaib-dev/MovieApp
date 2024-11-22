@@ -1,20 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Moviedetail.css"
+import ReactStars from 'react-stars'
+// import { render } from 'react-dom'
+
 
 function Moviedetail() {
+    // const [newRating, setNewRating] = useState(0);
+
+    const [countValue, setCountValue] = useState(0)
+    const ratingChanged = (newRating) => {
+        console.log(newRating)
+        setCountValue(newRating);
+    }
+
+
+
     return (
         <>
             <div className="box2">
                 <div className="movieDetail">
                     <div className="bigPoster">
-                        <img src="" alt="" />
+                        <img src="/inception.webp" alt="" />
                     </div>
                     <div className="bigData">
+                        <p className="bigDataTitle">Inception</p>
+                        <p className="timeDuration">16 july 2010 - 148 min</p>
+                        <p className="action">Action Adventure Sci - Fi</p>
+                        <p className="rating">* 8.8 IMDB rating</p>
 
+                    </div>
+
+                </div>
+                <div className="detailDescription">
+                    <div className="multiplestar">
+                        <ReactStars
+                            count={10}
+                            onChange={ratingChanged}
+                            size={34}
+                            color2={'#ffd700'}
+                        />
+                        <h3 className='ratingNumber'>{countValue}</h3>
+                    </div>
+                    <div className="movieDescription">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus repellat, minus sunt eos nesciunt id  minima maiores facere itaque aperiam praesentium iste  asperiores atque nihil sapiente libero aspernatur!
+                        </p>
+                        <p>Directed by: Charm John</p>
                     </div>
                 </div>
             </div>
-            
+
 
         </>
     )

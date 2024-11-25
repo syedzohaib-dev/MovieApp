@@ -3,18 +3,27 @@ import './App.css'
 import Moviedetail from './Components/Moviedetail'
 import Movielist from './Components/Movielist'
 import Nav from './Components/Nav'
+import Watchlist from './Components/Watchlist'
 
 function App() {
 
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState('tom')
   const [movie, setMovie] = useState([])
   const [selecteId, setSelectedId] = useState(null)
+  const [watchList, setWatchList] = useState([])
+
 
   function mySearch(val) {
     setSearch(val)
   }
   function handelMovieSelect(id) {
     setSelectedId(id)
+    console.log(id)
+  }
+
+  function addToWatchlist(movie) {
+    setWatchList((prev) => [...prev, movie])
+    setWatchList(null)
   }
 
   async function getMovieDataSearch(search) {
@@ -52,7 +61,14 @@ function App() {
       <Nav search={search} mySearch={mySearch} />
       <div className="pappa">
         <Movielist movie={movie} onSelectMovie={handelMovieSelect} />
-        <Moviedetail />
+        {
+          selecteId ? (
+            <Moviedetail setSelectedId={selecteId} onAddToWatchList={addToWatchlist} />
+          ) : (
+            <Watchlist />
+          )
+        }
+
       </div>
     </>
   )

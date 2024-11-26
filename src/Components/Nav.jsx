@@ -10,7 +10,7 @@ function Nav(props) {
         mySearch(val)
     }
 
-   
+
     return (
 
         <>

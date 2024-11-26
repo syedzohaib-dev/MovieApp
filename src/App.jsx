@@ -18,7 +18,7 @@ function App() {
   }
   function handelMovieSelect(id) {
     setSelectedId(id)
-    console.log(id)
+    // console.log(id)
   }
 
   function addToWatchlist(movie) {
@@ -58,12 +58,12 @@ function App() {
 
   return (
     <>
-      <Nav search={search} mySearch={mySearch} />
+      <Nav search={search} mySearch={mySearch} movie={movie} />
       <div className="pappa">
         <Movielist movie={movie} onSelectMovie={handelMovieSelect} />
         {
           selecteId ? (
-            <Moviedetail setSelectedId={selecteId} onAddToWatchList={addToWatchlist} />
+            <Moviedetail selectedId={selecteId} onAddToWatchList={addToWatchlist} />
           ) : (
             <Watchlist />
           )
